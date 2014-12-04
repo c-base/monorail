@@ -1,0 +1,68 @@
+Anforderungen Elektronik Monorail
+
+
+Modul "Abstand"
+benötigt: pro Zug zwei
+Anschlüsse:
+	2x Bumper (links und rechts)
+	1x IR-Distanz-sensor (sharp)
+	1x RGB-LED (nicht extrem hell, aber auch keine müde funzel/kontroll-LED
+	Bus
+Stromversorgung vom Spannungsregler auf dem Akkucontrol-board
+
+Modul "Motortreiber"
+benötigt: pro Zug einen
+	Anschluss des fertigen Motortreibers
+	Bus
+Stromversorgung vom Spannungsregler auf dem Akkucontrolboard
+Motorstromversorgung direkt vom Akku mit vielen Volts
+
+Modul "Akkucontrol"
+benötigt: pro Zug einen
+Anschlüsse:
+	Akkustrom
+	Ladestrom
+	Balancerkontakte
+	Bus
+Funktionen:
+	Laden und Balancen des Akkus
+	Versorgung der Komponenten mit Strom in passender Spannung
+		Bus-Strom: 3,3V
+		Beagle bone black: 5V (vermutung!)
+	Bereitstellung von Informationen über den Füllstand des Akkus über den Bus
+	
+Modul "Barcodescanner"
+benötigt: pro Zug einen
+Anschlüsse:
+	IR-LED
+	1-2 IR-Rx
+	Bus
+Stromversorgung vom Spannungsregler auf dem Akkucontrolboard
+	
+Modul "Flaschenwagen"
+benötigt ersma gar nich, aber später pro Zug einen oder zwei
+Anschlüsse:
+	Modellbauservo oder kleiner Schrittmotor
+	Lichtschranke oder Taster zum feststellen ob beladen oder leer
+	LCD Display (zwei zeilen, z.b: http://www.watterott.com/de/Serial-Enabled-16x2-LCD-Yellow-on-Blue-5V
+		dient zur Anzeige für wen die Ladung bestimmt ist, bzw was eingeladen werden soll durch den Barbot
+	Bus
+Stromversorgung direkt vom Akku für den Servo (7,5V). Der Mikrocontroller könnte entweder seinen eigenen Spannungsregler haben oder aber vom Akkucontrolboard mit versorgt werden
+		
+Modul "Lichtwagen"
+benötigt: ersma gar nich, aber später irgendwann pro lichtzug einen
+Anschlüsse:
+	zwei Modellbauservos für X und Y Ausrichtung
+	PWM-Steuerung für sehr starke LEDs (Strahler!)
+	PWM-Steuerung für nen paar dekorative RGB-LEDs rund um den Lichtwagen
+	Bus
+Stromversorgung direkt vom Akku für die Servos und die Highpower-LEDs mit eigenem Spannungsregler. Der Mikrocontroller könnte entweder seinen eigenen Spannungsregler haben oder aber vom Akkucontrolboard mit versorgt werden
+	
+Modul "Kamerawagen"
+benötigt: ersma gar nich, aber später irgendwann pro kamerazug einen
+Anschlüsse:
+	zwei Modellbauservos für X und Y Ausrichtung
+	Stromversorgung für Kamera
+	vll. remotesteuerung der kamera
+	USB-Verbindung zum Beagleboneblack
+Stromversorgung direkt vom Akku für den Kamerastrom mit Spannungsregler. Der Mikrocontroller könnte entweder seinen eigenen Spannungsregler haben oder aber vom Akkucontrolboard mit versorgt werden
